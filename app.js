@@ -483,6 +483,32 @@ if (location.protocol === 'https:' && 'serviceWorker' in navigator) {
   }).catch(function () { document.documentElement.dataset.sw = 'err'; });
 }
 
+function gemTiles(root) {
+  var list = (root && root.querySelectorAll) ? root.querySelectorAll('.tile') : [];
+  list.forEach(function (t) {
+    if (t.querySelector('.gem')) return;
+    var n = t.firstChild;
+    while (n && !(n.nodeType === 3 && n.textContent.trim())) n = n.nextSibling;
+    if (!n) return;
+    var s = document.createElement('span');
+    s.className = 'gem';
+    s.textContent = n.textContent.trim();
+    t.insertBefore(s, n);
+    n.textContent = '';
+  });
+}
+try { gemTiles(document); } catch (e) {}
+try {
+  new MutationObserver(function (ms) {
+    ms.forEach(function (m) {
+      m.addedNodes.forEach(function (node) {
+        if (node.nodeType !== 1) return;
+        if (node.matches && node.matches('.tile')) gemTiles(node.parentNode || document);
+        else if (node.querySelectorAll) gemTiles(node);
+      });
+    });
+  }).observe(document.body, {childList: true, subtree: true});
+} catch (e) {}
 try { renderIos(); } catch (e) {}
 try { if (typeof setLang === 'function') setLang(LANG, true); } catch (e) {}
 try { notifyDue(); } catch (e) {}
