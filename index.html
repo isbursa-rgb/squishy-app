@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Omni · חפש הכל</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<script>try{if(localStorage.getItem('lang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr'}}catch(e){}</script>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ec4899">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="האפליקציה המשוגעת">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800;900&family=Heebo:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{--bg:#07071a;--fg:#f4f4ff;--muted:#a8a8c8;--glass:rgba(255,255,255,.07);--border:rgba(255,255,255,.14);--g1:#7c3aed;--g2:#ec4899;--g3:#06b6d4;--card:rgba(255,255,255,.06)}
 body.light{--bg:#f3f1ff;--fg:#17172e;--muted:#5b5b7a;--glass:rgba(255,255,255,.65);--border:rgba(30,20,80,.12);--card:rgba(255,255,255,.8)}
@@ -125,6 +134,61 @@ body.bigtext{zoom:1.15}
 .shopc{border-radius:18px;padding-bottom:10px;transition:.25s}.shopc:hover{transform:scale(1.05)}.shopc .shop:hover{transform:none}
 .shopc .nm{display:flex;gap:6px;padding:0 14px}.shopc .nm a{color:#fff;font-size:.78rem;background:rgba(0,0,0,.25);padding:3px 10px;border-radius:999px;text-decoration:none}
 .vbuy{display:inline-block;margin:0 12px 10px;padding:4px 12px;border-radius:999px;background:linear-gradient(135deg,#34a853,#06b6d4);color:#fff;font-size:.8rem;font-weight:700;text-decoration:none}
+
+/* playful pink-purple refresh */
+:root{--bg:#160818;--fg:#fff7fb;--muted:#f3c6dc;--glass:rgba(255,255,255,.1);--border:rgba(255,186,220,.32);--g1:#c084fc;--g2:#ff4d9a;--g3:#67e8f9;--card:rgba(255,255,255,.08)}
+body.light{--bg:#fff5f9;--fg:#2b1024;--muted:#7a4a63;--glass:rgba(255,255,255,.82);--border:rgba(190,70,120,.16);--g1:#a855f7;--g2:#ec4899;--g3:#0891b2;--card:#fff}
+body{font-family:Rubik,Heebo,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:
+ radial-gradient(1000px 560px at 100% -10%, rgba(255,77,154,.42), transparent 55%),
+ radial-gradient(860px 520px at -10% 10%, rgba(168,85,247,.48), transparent 52%),
+ radial-gradient(700px 480px at 50% 120%, rgba(244,114,182,.22), transparent 46%),
+ var(--bg)}
+body.light{background:
+ radial-gradient(900px 480px at 100% -10%, rgba(251,207,232,.95), transparent 52%),
+ radial-gradient(780px 460px at 0% 0%, rgba(233,213,255,.95), transparent 50%),
+ #fff6fa}
+header{margin:12px auto 0;width:min(1240px,calc(100% - 16px));border-radius:28px;padding:12px 16px;box-shadow:0 12px 40px rgba(236,72,153,.2);top:8px}
+.logo{letter-spacing:-.5px}
+.hbtns{flex-wrap:wrap;justify-content:flex-end;flex:1}
+.btn{padding:8px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.btn:active{transform:scale(.96)}
+.btn.grad{box-shadow:0 8px 22px rgba(255,77,154,.35)}
+#installBtn.can-install{box-shadow:0 0 0 3px #ff4d9a}
+h1{letter-spacing:-1.5px}
+.search input{border-radius:999px;border:2px solid rgba(255,255,255,.22)}
+.tiles{gap:14px}
+.tile{border-radius:28px;min-height:112px;border:2px solid rgba(255,255,255,.42);box-shadow:0 14px 28px rgba(40,0,40,.25), inset 0 1px 0 rgba(255,255,255,.35)}
+.tile b{font-size:.92rem;font-weight:800;background:rgba(0,0,0,.2);border-radius:999px;padding:4px 10px}
+.tile:hover{transform:translateY(-8px) scale(1.04)}
+.tile:active{transform:scale(.97)}
+.panel,.tbox,.cbox{border-radius:28px;box-shadow:0 16px 40px rgba(0,0,0,.18)}
+.card{border-radius:24px;box-shadow:0 10px 24px rgba(0,0,0,.16)}
+.card:hover{transform:translateY(-8px) scale(1.02)}
+.chip,.toast{border-radius:999px}
+.toast{box-shadow:0 12px 30px rgba(236,72,153,.35)}
+.kosher{border-radius:16px;background:rgba(250,204,21,.16);border:1px solid rgba(250,204,21,.35)}
+.remban{border-radius:18px;box-shadow:0 8px 20px rgba(255,140,0,.28)}
+.ioshint{max-width:760px;margin:16px auto 0;text-align:start;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:14px 16px;box-shadow:0 12px 30px rgba(236,72,153,.16)}
+.ioshint ol{margin:8px 1.2em 0;line-height:1.65}
+html[dir="ltr"] .search .ico{right:auto;left:22px}
+html[dir="ltr"] .search .go{left:auto;right:10px}
+html[dir="ltr"] .search input{padding:22px 220px 22px 64px !important}
+html[dir="ltr"] #micBtn{left:auto;right:166px}
+html[dir="ltr"] #lensBtn{left:auto;right:112px}
+html[dir="ltr"] .tlist,html[dir="ltr"] .chkl,html[dir="ltr"] .jl,html[dir="ltr"] .pwa,html[dir="ltr"] .wzr,html[dir="ltr"] .idea b{text-align:left}
+html[dir="ltr"] .tback{float:left}
+html[dir="ltr"] .tclose{left:auto;right:12px}
+html[dir="ltr"] #qrFull .qfx{right:auto;left:14px}
+@media(max-width:700px){
+ header{margin:8px auto 0;padding:10px;border-radius:22px}
+ .hbtns{flex-wrap:nowrap;max-width:100%;overflow-x:auto}
+}
+@media(max-width:520px){
+ html[dir="ltr"] .search input{padding-left:56px !important;padding-right:196px !important}
+ html[dir="ltr"] #micBtn{right:146px}
+ html[dir="ltr"] #lensBtn{right:100px}
+}
+
 </style>
 </head>
 <body>
@@ -135,7 +199,7 @@ body.bigtext{zoom:1.15}
  <div class="hbtns">
   <button class="btn" onclick="discover()">🎲 גלה</button>
   <button class="btn" onclick="toggleDrawer()">❤️ מועדפים</button><button class="btn" onclick="openCart()">🛒 <span id="cartN">רשימה</span></button><button class="btn" onclick="openWish()">🎁 משאלות</button><button class="btn" onclick="openJar()">💰 קופה</button><button class="btn" id="toolsBtn" onclick="openTools()">🧰 כלים</button><button class="btn" id="shareBtn" onclick="shareApp()">📤 שתף</button><button class="btn" id="qrBtn" onclick="openQR()">📱 בר קוד</button>
-  <button class="btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+  <button class="btn" id="langBtn" onclick="toggleLang()">🌐 English</button><button class="btn" id="remBtn" onclick="openReminders()">🔔 תזכורות</button><button class="btn" id="installBtn" onclick="installApp()">📲 התקן בטלפון</button><button class="btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
  </div>
 </header>
 <section class="hero" id="hero">
@@ -148,6 +212,7 @@ body.bigtext{zoom:1.15}
  </form>
  <div id="dym" style="margin-top:14px;color:var(--muted)"></div>
  <div class="tiles"><div class="tile" data-cat="squishy" style="background:linear-gradient(135deg,#f472b6,#a78bfa)">🧸<b>סקווישי</b></div><div class="tile" data-cat="modern" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">👕<b>בגדים של היום</b></div><div class="tile" data-cat="vintage" style="background:linear-gradient(135deg,#d97706,#92400e)">🎩<b>בגדי וינטג'</b></div><div class="tile" data-cat="toys" style="background:linear-gradient(135deg,#22c55e,#14b8a6)">🧩<b>צעצועים</b></div><div class="tile" data-cat="food" style="background:linear-gradient(135deg,#f97316,#ef4444)">🍕<b>אוכל</b></div><div class="tile" data-cat="shoes" style="background:linear-gradient(135deg,#64748b,#0ea5e9)">👟<b>נעליים</b></div><div class="tile" data-cat="sportsgear" style="background:linear-gradient(135deg,#16a34a,#65a30d)">🏀<b>ציוד ספורט</b></div><div class="tile" data-cat="schoolsup" style="background:linear-gradient(135deg,#facc15,#f97316)">✏️<b>ציוד לבית ספר</b></div><div class="tile" data-cat="electro" style="background:linear-gradient(135deg,#6366f1,#0f172a)">📱<b>אלקטרוניקה</b></div><div class="tile" data-cat="gifts" style="background:linear-gradient(135deg,#e11d48,#f472b6)">🎁<b>מתנות</b></div><div class="tile" data-cat="shabbat" style="background:linear-gradient(135deg,#1e3a8a,#ca8a04)">🕯️<b>שבת וחגים</b></div><div class="tile" data-cat="tickets" style="background:linear-gradient(135deg,#eab308,#db2777)">🎟️<b>כרטיסים</b></div><div class="tile" data-cat="sweets" style="background:linear-gradient(135deg,#f472b6,#fb7185)">🍬<b>ממתקים כשרים</b></div><div class="tile" data-cat="games" style="background:linear-gradient(135deg,#6366f1,#22d3ee)">🎮<b>משחקי וידאו לילדים</b></div><div class="tile" data-cat="books" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)">📚<b>ספרי ילדים</b></div><div class="tile" data-cat="edu" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">🔬<b>צעצועים חינוכיים</b></div><div class="tile" data-cat="pets" style="background:linear-gradient(135deg,#a16207,#f59e0b)">🐾<b>ציוד לחיות מחמד</b></div><div class="tile" data-cat="garden" style="background:linear-gradient(135deg,#16a34a,#84cc16)">🪴<b>צמחים וגינה</b></div><div class="tile" data-cat="jerseys" style="background:linear-gradient(135deg,#dc2626,#facc15)">👕<b>חולצות קבוצות</b></div><div class="tile" data-cat="art" style="background:linear-gradient(135deg,#e879f9,#f97316)">🎨<b>ציוד יצירה</b></div><div class="tile" data-cat="instr" style="background:linear-gradient(135deg,#7c3aed,#0ea5e9)">🎹<b>כלי נגינה למתחילים</b></div><div class="tile" data-tools="1" style="background:linear-gradient(135deg,#475569,#0ea5e9)">🧰<b>כלים</b></div><div class="tile" id="wazeTile" onclick="wazeModal()" style="background:linear-gradient(135deg,#33ccff,#0ea5e9);color:#0b2540">🚗<b>Waze</b></div><div class="tile" data-game="1" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">🎮<b>משחק</b></div></div><div id="homeRecent"></div>
+ <div id="iosHint" class="ioshint" hidden></div>
  <div class="chips" id="chips"></div>
 </section>
 <main id="main" style="display:none">
@@ -720,7 +785,7 @@ document.addEventListener('submit',e=>{const f=e.target.closest('.chkadd');if(!f
 document.addEventListener('submit',e=>{const f=e.target.closest('.mapq');if(!f)return;e.preventDefault();tool2({dataset:{t2:'mapgo'}})},true);
 document.addEventListener('change',e=>{const c=e.target.closest('input[data-t2=chk]');if(c)tool2(c)},true);
 // language
-const EN={'🎲 גלה':'🎲 Discover','❤️ מועדפים':'❤️ Favorites','🎁 משאלות':'🎁 Wishlist','💰 קופה':'💰 Savings','🧰 כלים':'🧰 Tools','חפש':'Search'};
+const EN={'🎲 גלה':'🎲 Discover','❤️ מועדפים':'❤️ Favorites','🎁 משאלות':'🎁 Wishlist','💰 קופה':'💰 Savings','🧰 כלים':'🧰 Tools','📤 שתף':'📤 Share','📱 בר קוד':'📱 QR code','חפש':'Search','✕ סגור':'✕ Close','נקה היסטוריה':'Clear history'};
 const ENT={squishy:'Squishy',modern:'Clothes',vintage:'Vintage',toys:'Toys',food:'Food',shoes:'Shoes',sportsgear:'Sports',schoolsup:'School',electro:'Electronics',gifts:'Gifts',shabbat:'Shabbat & Holidays',tickets:'Tickets',sweets:'Kosher sweets',games:'Video games',books:'Books',edu:'Educational',pets:'Pets',garden:'Garden',jerseys:'Team shirts',art:'Art supplies',instr:'Instruments'};
 function setLang(l){store.set('lang',l);const en=l==='en';document.documentElement.lang=en?'en':'he';
  document.querySelectorAll('header .btn,#goBtn').forEach(b=>{if(!b.dataset.he)b.dataset.he=b.textContent;const k=b.dataset.he.trim();if(EN[k])b.textContent=en?EN[k]:b.dataset.he});
@@ -813,4 +878,4 @@ async function wzPrev(){const i=$('wzIn'),m=$('wzMap'),L=$('wzList');if(!i||!m)r
  if(!R.length){m.innerHTML=`<div class="mapload" style="padding:20px;text-align:center">😕 לא מצאתי את "${esc(v)}".<br>נסה להוסיף את שם העיר — למשל: "${esc(v)} ירושלים"</div>`;return}
  if(R.length>1)L.innerHTML=`<p class="empty" style="margin:8px 0 4px">נמצאו ${R.length} מקומות — בחר:</p>`+R.map((r,k)=>`<button class="wzr" onclick="wzPick(${k})">📍 <b>${esc(r[3])}</b> <small>${esc(r[2].split(',').slice(1,4).join(','))}</small></button>`).join('');
  wzPick(0)}
-</script></body></html>
+</script><script src="app.js"></script></body></html>
