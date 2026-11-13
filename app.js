@@ -265,6 +265,8 @@ if (typeof setLang === 'function') {
     document.documentElement.lang = LANG === 'en' ? 'en' : 'he';
     document.documentElement.dir = LANG === 'en' ? 'ltr' : 'rtl';
     var lb = $('langBtn'); if (lb) lb.textContent = LANG === 'en' ? '🌐 עברית' : '🌐 English';
+    var an = $('appName'); if (an) an.textContent = ui('האפליקציה המשוגעת', 'The Crazy App');
+    document.title = ui('האפליקציה המשוגעת', 'The Crazy App');
     var ib = $('installBtn'); if (ib) ib.textContent = ui('📲 התקן בטלפון', '📲 Install on phone');
     var rb = $('remBtn'); if (rb) rb.textContent = ui('🔔 תזכורות', '🔔 Reminders');
     localizeRoot($('drawer'));

@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Omni · חפש הכל</title>
+<title>האפליקציה המשוגעת</title>
 <script>try{if(localStorage.getItem('lang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr'}}catch(e){}</script>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -153,7 +153,8 @@ header{position:sticky;top:14px;z-index:20;margin:14px auto 0;width:min(1120px,c
 header::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.38) 48%,transparent 62%);background-size:220% 100%;animation:hdrshimmer 3.8s linear infinite;pointer-events:none}
 @keyframes hdrshimmer{to{background-position:-220% 0}}
 header>*{position:relative;z-index:1}
-.logo{display:flex;align-items:center;gap:8px;background:none;-webkit-background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-weight:800;letter-spacing:.04em;text-shadow:0 0 16px rgba(34,211,238,.85);font-family:Orbitron,Rubik,sans-serif}
+.logo{display:flex;align-items:center;gap:8px;flex:none;background:none;-webkit-background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-weight:800;letter-spacing:0;text-shadow:0 0 16px rgba(34,211,238,.85);font-family:Rubik,Heebo,sans-serif;font-size:.95rem;line-height:1.15}
+#appName{max-width:11rem}
 .logoimg{width:42px;height:42px;border-radius:12px;object-fit:cover;box-shadow:0 0 14px rgba(34,211,238,.9),0 0 4px #22d3ee}
 .hbtns{flex-wrap:wrap;justify-content:flex-end;flex:1;gap:8px}
 header .btn{background:rgba(15,23,42,.45);border:1px solid rgba(148,163,184,.45);color:#e8f7ff;font-weight:700;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
@@ -232,7 +233,7 @@ html[dir="ltr"] #qrFull .qfx{right:auto;left:14px}
 <noscript><div style="background:#f43f5e;color:#fff;padding:12px;text-align:center;font-weight:700">⚠️ JavaScript חסום בתצוגה הזו — החיפוש יעבור לוויקיפדיה. לחוויה המלאה פתח את הקובץ בדפדפן (Chrome/Edge).</div></noscript>
 <div class="blobs"><span></span><span></span><span></span></div>
 <header>
- <div class="logo" onclick="home()"><img class="logoimg" src="icon-192.png" alt="">Omni</div>
+ <div class="logo" onclick="home()"><img class="logoimg" src="icon-192.png" alt=""><span id="appName">האפליקציה המשוגעת</span></div>
  <div class="hbtns">
   <button class="btn" onclick="discover()">🎲 גלה</button>
   <button class="btn" onclick="toggleDrawer()">❤️ מועדפים</button><button class="btn" onclick="openCart()">🛒 <span id="cartN">רשימה</span></button><button class="btn" onclick="openWish()">🎁 משאלות</button><button class="btn" onclick="openJar()">💰 קופה</button><button class="btn" id="toolsBtn" onclick="openTools()">🧰 כלים</button><button class="btn" id="shareBtn" onclick="shareApp()">📤 שתף</button><button class="btn" id="qrBtn" onclick="openQR()">📱 בר קוד</button>
@@ -648,7 +649,7 @@ async function discover(){
  try{const d=await j('https://he.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=1&format=json&origin=*');search(d.query.random[0].title)}catch(e){search(TRENDING[Math.floor(Math.random()*TRENDING.length)])}
 }
 function share(){try{const u=location.href.split('#')[0]+'#'+encodeURIComponent($('q').value);
- if(navigator.share)navigator.share({title:'Omni',url:u}).catch(()=>{});else{navigator.clipboard?.writeText(u);toast('הקישור הועתק 📋')}}catch(e){toast('לא ניתן לשתף כאן')}}
+ if(navigator.share)navigator.share({title:document.documentElement.lang==='en'?'The Crazy App':'האפליקציה המשוגעת',url:u}).catch(()=>{});else{navigator.clipboard?.writeText(u);toast('הקישור הועתק 📋')}}catch(e){toast('לא ניתן לשתף כאן')}}
 document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==$('q')){e.preventDefault();$('q').focus()}});
 function init(){
 $('searchForm').addEventListener('submit',e=>{e.preventDefault();search($('q').value)});
@@ -682,7 +683,7 @@ function cartUI(){const n=qTotal();const c=$('cartN');if(c)c.textContent=n?n:'ר
 function listHtml(k,title,intro){const l=LS.get(k);return `<h2>${title}</h2><p class="empty">${intro}</p>${l.length?`<ol class="tlist">${l.map((x,i)=>`<li><span>${esc(x)}</span>${k==='cart'?qtyHtml(x,1):''}<button class="btn" data-tool="rm" data-k="${k}" data-i="${i}">🗑️</button></li>`).join('')}</ol>`:'<p class="empty">הרשימה ריקה — לחץ 🛒 או 🎁 על כל כרטיס כדי להוסיף</p>'}
  ${k==='cart'&&l.length?`<p class="qtot">🧮 סה״כ: <b>${qTotal()}</b> פריטים (${l.length} מוצרים שונים)</p>`:''}<form class="tadd" data-k="${k}"><input placeholder="או כתוב משהו להוספה..." maxlength="60"><button class="btn">➕</button></form>
  ${l.length?`<div class="tbtns"><button class="btn grad" data-tool="share" data-k="${k}">📤 שתף</button><button class="btn" data-tool="copy" data-k="${k}">📋 העתק</button><button class="btn" data-tool="clear" data-k="${k}">🧹 נקה</button></div>`:''}`}
-function listText(k){const l=LS.get(k);return k==='cart'?`🛒 רשימת קניות — אפשר לאשר? 🙏\n${l.map((x,i)=>`${i+1}. ${x}${qGet(x)>1?' × '+qGet(x):''}`).join('\n')}\nסה״כ ${qTotal()} פריטים\n(נשלח מהאפליקציה Omni)`:`🎁 רשימת המשאלות שלי ליום ההולדת 🎂\n${l.map((x,i)=>`${i+1}. ${x}`).join('\n')}\nתודה! ❤️`}
+function listText(k){const l=LS.get(k);return k==='cart'?`🛒 רשימת קניות — אפשר לאשר? 🙏\n${l.map((x,i)=>`${i+1}. ${x}${qGet(x)>1?' × '+qGet(x):''}`).join('\n')}\nסה״כ ${qTotal()} פריטים\n(נשלח מהאפליקציה המשוגעת)`:`🎁 רשימת המשאלות שלי ליום ההולדת 🎂\n${l.map((x,i)=>`${i+1}. ${x}`).join('\n')}\nתודה! ❤️`}
 function openCart(){tmodal(listHtml('cart','🛒 רשימת הקניות שלי','שלח את הרשימה להורים לאישור. אין כאן תשלום — רק רשימה.'))}
 function openWish(){tmodal(listHtml('wish','🎁 רשימת משאלות ליום הולדת','שתף עם המשפחה מה היית שמח לקבל 🎂'))}
 async function shareText(t){try{if(navigator.share){await navigator.share({text:t});return}}catch(e){if(e&&e.name==='AbortError')return}copyText(t)}
@@ -843,9 +844,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 const APP_URL='https://isbursa-rgb.github.io/squishy-app/'; // ← כשהאפליקציה תעלה לאינטרנט, שים כאן את הכתובת (למשל 'https://...')
 let APP_SRC0=null;try{APP_SRC0='<!DOCTYPE html>\n'+document.documentElement.outerHTML}catch(e){}
 async function appFile(){let txt=null;try{if(/^https?:/.test(location.protocol)){const r=await fetch(location.href.split('#')[0],{cache:'no-store'});if(r.ok)txt=await r.text()}}catch(e){}
- if(!txt)txt=APP_SRC0||('<!DOCTYPE html>\n'+document.documentElement.outerHTML);return new File([txt],'omni-app.html',{type:'text/html'})}
+ if(!txt)txt=APP_SRC0||('<!DOCTYPE html>\n'+document.documentElement.outerHTML);return new File([txt],'crazy-app.html',{type:'text/html'})}
 function dlApp(){appFile().then(f=>{try{const u=URL.createObjectURL(f),a=document.createElement('a');a.href=u;a.download=f.name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);toast('⬇️ הקובץ ירד — אפשר לשלוח אותו לחברים')}catch(e){toast('לא הצלחתי להוריד')}})}
-async function shareApp(){try{const f=await appFile();if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'Omni',text:'האפליקציה שלי 🛍️'});return}}catch(e){if(e&&e.name==='AbortError')return}
+async function shareApp(){try{const f=await appFile();if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:document.documentElement.lang==='en'?'The Crazy App':'האפליקציה המשוגעת',text:document.documentElement.lang==='en'?'The Crazy App 🛍️':'האפליקציה המשוגעת 🛍️'});return}}catch(e){if(e&&e.name==='AbortError')return}
  shareFallback()}
 function shareFallback(){tmodal(`<h2>📤 שתף את האפליקציה</h2><p>במכשיר הזה אי אפשר לשתף קובץ ישירות. אפשר להוריד עותק של האפליקציה ולשלוח אותו:</p><div class="tbtns"><button class="btn grad" onclick="dlApp()">⬇️ הורד עותק של האפליקציה</button></div>`)}
 function qrSvg(text){try{const q=qrcode(0,'M');q.addData(text);q.make();const n=q.getModuleCount(),c=6,m=4,W=(n+m*2)*c;let d='';for(let r=0;r<n;r++)for(let k=0;k<n;k++)if(q.isDark(r,k))d+=`M${(k+m)*c},${(r+m)*c}h${c}v${c}h-${c}z`;return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${W}" width="240" height="240" style="background:#fff;border-radius:12px"><path d="${d}" fill="#000"/></svg>`}catch(e){return ''}}
