@@ -7,12 +7,12 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#ec4899">
+<meta name="theme-color" content="#0369a1">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="האפליקציה המשוגעת">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800;900&family=Heebo:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Rubik:wght@400;600;700;800;900&family=Heebo:wght@400;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{--bg:#07071a;--fg:#f4f4ff;--muted:#a8a8c8;--glass:rgba(255,255,255,.07);--border:rgba(255,255,255,.14);--g1:#7c3aed;--g2:#ec4899;--g3:#06b6d4;--card:rgba(255,255,255,.06)}
 body.light{--bg:#f3f1ff;--fg:#17172e;--muted:#5b5b7a;--glass:rgba(255,255,255,.65);--border:rgba(30,20,80,.12);--card:rgba(255,255,255,.8)}
@@ -136,52 +136,56 @@ body.bigtext{zoom:1.15}
 .vbuy{display:inline-block;margin:0 12px 10px;padding:4px 12px;border-radius:999px;background:linear-gradient(135deg,#34a853,#06b6d4);color:#fff;font-size:.8rem;font-weight:700;text-decoration:none}
 
 /* neon glass redesign */
-:root{--bg:#070014;--fg:#fff7ff;--muted:#e7c4ef;--glass:rgba(16,6,32,.55);--border:rgba(255,255,255,.2);--g1:#7c3aed;--g2:#ff2d87;--g3:#ff7a18;--card:rgba(18,6,36,.5)}
-body.light{--bg:#2a1048;--fg:#1a0b24;--muted:#5a3058;--glass:rgba(255,255,255,.7);--border:rgba(255,255,255,.45);--g1:#6d28d9;--g2:#e11d73;--g3:#f97316;--card:rgba(255,255,255,.78)}
+:root{--bg:#020617;--fg:#e8f7ff;--muted:#9fb4c8;--glass:rgba(15,23,42,.62);--border:rgba(148,163,184,.38);--g1:#0369a1;--g2:#22d3ee;--g3:#22c55e;--card:rgba(15,23,42,.72)}
+body.light{--bg:#0b1220;--fg:#e8f7ff;--muted:#9fb4c8;--glass:rgba(30,41,59,.72);--border:rgba(148,163,184,.4);--g1:#0284c7;--g2:#22d3ee;--g3:#22c55e;--card:rgba(30,41,59,.78)}
 body{font-family:Rubik,Heebo,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:600;background:
- radial-gradient(900px 520px at 100% -8%, rgba(255,45,135,.55), transparent 55%),
- radial-gradient(820px 480px at -8% 0%, rgba(91,33,182,.7), transparent 52%),
- radial-gradient(700px 420px at 70% 110%, rgba(255,122,24,.4), transparent 50%),
- #070014}
-body.light{background:linear-gradient(155deg,#4c1d95 0%,#db2777 46%,#f97316 100%);color:#1a0b24}
-.blobs{opacity:.85;filter:blur(70px)}
-.blobs span:nth-child(1){background:#6d28d9}
-.blobs span:nth-child(2){background:#ff2d87}
-.blobs span:nth-child(3){background:#ff7a18}
-header{position:sticky;top:0;z-index:20;margin:0;width:auto;border-radius:0 0 36px 36px;padding:16px 4vw 14px;border:0;border-bottom:1px solid rgba(255,255,255,.22);background:linear-gradient(110deg,rgba(46,8,92,.88),rgba(190,18,110,.78) 54%,rgba(255,110,20,.82));backdrop-filter:blur(22px) saturate(1.45);box-shadow:0 18px 50px rgba(255,40,120,.28);overflow:hidden}
+ radial-gradient(900px 520px at 100% -8%, rgba(14,165,233,.4), transparent 55%),
+ radial-gradient(820px 480px at -8% 0%, rgba(3,105,161,.45), transparent 52%),
+ radial-gradient(700px 420px at 70% 110%, rgba(34,197,94,.28), transparent 50%),
+ #020617}
+body.light{background:linear-gradient(165deg,#020617,#0c4a6e 55%,#064e3b);color:#e8f7ff}
+.blobs{opacity:.75;filter:blur(70px)}
+.blobs span:nth-child(1){background:#0369a1}
+.blobs span:nth-child(2){background:#22d3ee}
+.blobs span:nth-child(3){background:#22c55e}
+header{position:sticky;top:14px;z-index:20;margin:14px auto 0;width:min(1120px,calc(100% - 28px));border-radius:28px;padding:14px 18px;border:1px solid rgba(34,211,238,.45);background:linear-gradient(110deg,#020617,#0369a1 52%,#059669);backdrop-filter:blur(22px) saturate(1.4);box-shadow:0 16px 40px rgba(2,6,23,.55),0 0 24px rgba(34,211,238,.25);overflow:hidden}
 header::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.38) 48%,transparent 62%);background-size:220% 100%;animation:hdrshimmer 3.8s linear infinite;pointer-events:none}
 @keyframes hdrshimmer{to{background-position:-220% 0}}
 header>*{position:relative;z-index:1}
-.logo{background:none;-webkit-background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-weight:800;letter-spacing:-.4px;text-shadow:0 0 18px rgba(255,190,70,.85)}
+.logo{background:none;-webkit-background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-weight:800;letter-spacing:.04em;text-shadow:0 0 16px rgba(34,211,238,.85);font-family:Orbitron,Rubik,sans-serif}
 .hbtns{flex-wrap:wrap;justify-content:flex-end;flex:1;gap:8px}
-header .btn{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);color:#fff;font-weight:700;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
-header .btn:hover{background:rgba(255,255,255,.28);box-shadow:0 0 18px rgba(255,140,50,.6);transform:translateY(-2px)}
+header .btn{background:rgba(15,23,42,.45);border:1px solid rgba(148,163,184,.45);color:#e8f7ff;font-weight:700;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+header .btn:hover{background:rgba(14,165,233,.28);box-shadow:0 0 16px rgba(34,211,238,.55);transform:translateY(-2px)}
 .btn{font-weight:700;border-radius:999px}
 .btn:active{transform:scale(.96)}
-.btn.grad{background:linear-gradient(135deg,#7c3aed,#ff2d87 55%,#ff7a18);box-shadow:0 8px 24px rgba(255,45,135,.45)}
-#installBtn.can-install{box-shadow:0 0 0 3px #ff7a18,0 0 22px rgba(255,122,24,.7)}
-h1{font-weight:800;letter-spacing:-1.5px;font-size:clamp(2.8rem,7vw,5.2rem)}
-h1,h2,h3,.tile b,.btn,.logo{font-family:Rubik,Heebo,sans-serif}
+.btn.grad{background:linear-gradient(135deg,#0369a1,#22d3ee 55%,#22c55e);box-shadow:0 8px 24px rgba(34,211,238,.4);color:#041018}
+#installBtn.can-install{box-shadow:0 0 0 3px #22d3ee,0 0 22px rgba(34,197,94,.55)}
+h1{font-weight:800;letter-spacing:.02em;font-size:clamp(2.6rem,6.4vw,4.8rem)}
+h1,h2,h3{font-family:Orbitron,Rubik,Heebo,sans-serif}
+.tile b,.btn{font-family:Rubik,Heebo,sans-serif}
+.hero{max-width:1120px;margin-inline:auto}
 .hero p{font-weight:600}
-.search input{border-radius:999px;background:rgba(8,2,20,.62);border:1px solid rgba(255,255,255,.22);box-shadow:0 16px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.08);font-weight:600}
-.search input:focus{border-color:#ff4d9a;box-shadow:0 0 0 4px rgba(255,45,135,.4),0 0 28px rgba(255,122,24,.55),0 0 48px rgba(124,58,237,.45)}
+.search{max-width:720px}
+.search input{border-radius:999px;background:rgba(2,6,23,.72);border:1px solid rgba(148,163,184,.4);box-shadow:0 16px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06);font-weight:600;color:#e8f7ff}
+.search input:focus{border-color:#22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.35),0 0 28px rgba(34,197,94,.4)}
 .search .go{border-radius:999px;font-weight:800}
-.tiles{gap:16px;max-width:980px}
-.tile{position:relative;min-height:132px;padding:16px 8px 14px;border-radius:28px;border:1px solid rgba(255,255,255,.38);box-shadow:0 14px 30px rgba(0,0,0,.35),0 0 22px rgba(255,45,135,.22);transition:transform .22s cubic-bezier(.2,.85,.2,1),box-shadow .22s}
-.tile .gem{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-size:2rem;line-height:1;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.78),rgba(255,255,255,.16) 46%,rgba(0,0,0,.22));box-shadow:0 0 22px rgba(255,255,255,.55),0 8px 16px rgba(0,0,0,.28),inset 0 0 12px rgba(255,255,255,.55)}
-.tile b{font-size:.95rem;font-weight:800;background:rgba(0,0,0,.28);border-radius:999px;padding:4px 10px;backdrop-filter:blur(6px)}
-.tile:hover{transform:translateY(-10px) scale(1.06);box-shadow:0 22px 40px rgba(0,0,0,.4),0 0 28px rgba(255,122,24,.45)}
+.tiles{gap:16px;max-width:1040px;margin-inline:auto}
+.tile{position:relative;min-height:132px;padding:16px 8px 14px;border-radius:28px;border:1px solid #22d3ee;box-shadow:0 12px 28px rgba(0,0,0,.4),0 0 16px rgba(34,211,238,.28);transition:transform .22s cubic-bezier(.2,.85,.2,1),box-shadow .22s}
+.tile .gem{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-size:2rem;line-height:1;background:radial-gradient(circle at 32% 28%,rgba(226,232,240,.55),rgba(15,23,42,.2) 48%,rgba(0,0,0,.28));box-shadow:0 0 16px rgba(34,211,238,.45),inset 0 0 10px rgba(255,255,255,.35)}
+.tile b{font-size:.95rem;font-weight:800;background:rgba(2,6,23,.62);color:#e0f2fe;border-radius:999px;padding:4px 10px;backdrop-filter:blur(6px)}
+.tile:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 18px 36px rgba(0,0,0,.45),0 0 26px rgba(34,211,238,.7),0 0 14px rgba(34,197,94,.4)}
 .tile:active{transform:scale(.94)}
-.panel,.tbox,.cbox,.ioshint{background:rgba(14,6,28,.55);backdrop-filter:blur(18px) saturate(1.35);border:1px solid rgba(255,255,255,.16);border-radius:28px;box-shadow:0 22px 50px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.14)}
-.card{background:rgba(16,6,32,.5);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.16);border-radius:26px;box-shadow:0 16px 36px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.12)}
-.card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 20px 40px rgba(255,45,135,.28)}
+.panel,.tbox,.cbox,.ioshint{background:linear-gradient(180deg,rgba(148,163,184,.16),rgba(15,23,42,.78));backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(148,163,184,.38);border-radius:28px;box-shadow:0 22px 50px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.16)}
+.card{background:linear-gradient(180deg,rgba(148,163,184,.14),rgba(15,23,42,.8));backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(148,163,184,.34);border-radius:26px;box-shadow:0 16px 36px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.1)}
+.card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 20px 40px rgba(34,211,238,.25)}
 .chip{border-radius:999px;font-weight:700}
-.toast{border-radius:999px;font-weight:800;background:linear-gradient(135deg,#6d28d9,#ff2d87 60%,#ff7a18);box-shadow:0 12px 30px rgba(255,45,135,.45)}
+.toast{border-radius:999px;font-weight:800;background:linear-gradient(135deg,#0369a1,#22d3ee 55%,#22c55e);color:#041018;box-shadow:0 12px 30px rgba(34,211,238,.4)}
+#cmpTray{border-color:#22d3ee}
+.tbt:hover{border-color:#22d3ee}
 .ioshint{max-width:760px;margin:16px auto 0;text-align:start;padding:14px 16px}
 .ioshint ol{margin:8px 1.2em 0;line-height:1.65}
-body.light h1,body.light .hero p{color:#fff}
-body.light .panel,body.light .card,body.light .tbox,body.light .search input{color:#1a0b24}
-body.light .search input{background:rgba(255,255,255,.82)}
+body.light h1,body.light .hero p{color:#e8f7ff}
+main{max-width:1120px}
 html[dir="ltr"] .search .ico{right:auto;left:22px}
 html[dir="ltr"] .search .go{left:auto;right:10px}
 html[dir="ltr"] .search input{padding:22px 220px 22px 64px !important}
@@ -192,7 +196,7 @@ html[dir="ltr"] .tback{float:left}
 html[dir="ltr"] .tclose{left:auto;right:12px}
 html[dir="ltr"] #qrFull .qfx{right:auto;left:14px}
 @media(max-width:760px){
- header{position:fixed;top:auto;bottom:10px;inset-inline:10px;width:auto;margin:0;border-radius:999px;padding:7px 8px;z-index:45;box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 24px rgba(255,45,135,.35)}
+ header{position:fixed;top:auto;bottom:10px;inset-inline:10px;width:auto;margin:0;border-radius:999px;padding:7px 8px;z-index:45;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 22px rgba(34,211,238,.35)}
  header::after{border-radius:999px}
  .logo{font-size:1rem;flex:none;padding-inline:6px}
  .hbtns{flex:1;min-width:0;max-width:none;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
@@ -241,7 +245,7 @@ html[dir="ltr"] #qrFull .qfx{right:auto;left:14px}
   <button type="button" class="btn micb" id="micBtn" title="חיפוש קולי" style="display:none">🎤</button><a class="btn micb" id="lensBtn" href="https://lens.google.com/" target="_self" title="חיפוש לפי תמונה (צריך אינטרנט)">📸</a><button type="submit" class="btn grad go" id="goBtn">חפש</button>
  </form>
  <div id="dym" style="margin-top:14px;color:var(--muted)"></div>
- <div class="tiles"><div class="tile" data-cat="squishy" style="background:linear-gradient(135deg,#f472b6,#a78bfa)">🧸<b>סקווישי</b></div><div class="tile" data-cat="modern" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">👕<b>בגדים של היום</b></div><div class="tile" data-cat="vintage" style="background:linear-gradient(135deg,#d97706,#92400e)">🎩<b>בגדי וינטג'</b></div><div class="tile" data-cat="toys" style="background:linear-gradient(135deg,#22c55e,#14b8a6)">🧩<b>צעצועים</b></div><div class="tile" data-cat="food" style="background:linear-gradient(135deg,#f97316,#ef4444)">🍕<b>אוכל</b></div><div class="tile" data-cat="shoes" style="background:linear-gradient(135deg,#64748b,#0ea5e9)">👟<b>נעליים</b></div><div class="tile" data-cat="sportsgear" style="background:linear-gradient(135deg,#16a34a,#65a30d)">🏀<b>ציוד ספורט</b></div><div class="tile" data-cat="schoolsup" style="background:linear-gradient(135deg,#facc15,#f97316)">✏️<b>ציוד לבית ספר</b></div><div class="tile" data-cat="electro" style="background:linear-gradient(135deg,#6366f1,#0f172a)">📱<b>אלקטרוניקה</b></div><div class="tile" data-cat="gifts" style="background:linear-gradient(135deg,#e11d48,#f472b6)">🎁<b>מתנות</b></div><div class="tile" data-cat="shabbat" style="background:linear-gradient(135deg,#1e3a8a,#ca8a04)">🕯️<b>שבת וחגים</b></div><div class="tile" data-cat="tickets" style="background:linear-gradient(135deg,#eab308,#db2777)">🎟️<b>כרטיסים</b></div><div class="tile" data-cat="sweets" style="background:linear-gradient(135deg,#f472b6,#fb7185)">🍬<b>ממתקים כשרים</b></div><div class="tile" data-cat="games" style="background:linear-gradient(135deg,#6366f1,#22d3ee)">🎮<b>משחקי וידאו לילדים</b></div><div class="tile" data-cat="books" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)">📚<b>ספרי ילדים</b></div><div class="tile" data-cat="edu" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">🔬<b>צעצועים חינוכיים</b></div><div class="tile" data-cat="pets" style="background:linear-gradient(135deg,#a16207,#f59e0b)">🐾<b>ציוד לחיות מחמד</b></div><div class="tile" data-cat="garden" style="background:linear-gradient(135deg,#16a34a,#84cc16)">🪴<b>צמחים וגינה</b></div><div class="tile" data-cat="jerseys" style="background:linear-gradient(135deg,#dc2626,#facc15)">👕<b>חולצות קבוצות</b></div><div class="tile" data-cat="art" style="background:linear-gradient(135deg,#e879f9,#f97316)">🎨<b>ציוד יצירה</b></div><div class="tile" data-cat="instr" style="background:linear-gradient(135deg,#7c3aed,#0ea5e9)">🎹<b>כלי נגינה למתחילים</b></div><div class="tile" data-tools="1" style="background:linear-gradient(135deg,#475569,#0ea5e9)">🧰<b>כלים</b></div><div class="tile" id="wazeTile" onclick="wazeModal()" style="background:linear-gradient(135deg,#33ccff,#0ea5e9);color:#0b2540">🚗<b>Waze</b></div><div class="tile" data-game="1" style="background:linear-gradient(160deg,#020617,#0c1e3d 42%,#0369a1 78%,#16a34a)">🎮⚡<b>משחק</b></div></div><div id="homeRecent"></div>
+ <div class="tiles"><div class="tile" data-cat="squishy" style="background:linear-gradient(160deg,#0b1220,#0369a1)">🧸<b>סקווישי</b></div><div class="tile" data-cat="modern" style="background:linear-gradient(160deg,#042f2e,#22c55e)">👕<b>בגדים של היום</b></div><div class="tile" data-cat="vintage" style="background:linear-gradient(160deg,#082f49,#22d3ee)">🎩<b>בגדי וינטג'</b></div><div class="tile" data-cat="toys" style="background:linear-gradient(160deg,#111827,#64748b)">🧩<b>צעצועים</b></div><div class="tile" data-cat="food" style="background:linear-gradient(160deg,#052e16,#4ade80)">🍕<b>אוכל</b></div><div class="tile" data-cat="shoes" style="background:linear-gradient(160deg,#0c4a6e,#38bdf8)">👟<b>נעליים</b></div><div class="tile" data-cat="sportsgear" style="background:linear-gradient(160deg,#134e4a,#2dd4bf)">🏀<b>ציוד ספורט</b></div><div class="tile" data-cat="schoolsup" style="background:linear-gradient(160deg,#1e293b,#94a3b8)">✏️<b>ציוד לבית ספר</b></div><div class="tile" data-cat="electro" style="background:linear-gradient(160deg,#064e3b,#16a34a)">📱<b>אלקטרוניקה</b></div><div class="tile" data-cat="gifts" style="background:linear-gradient(160deg,#0f172a,#0ea5e9)">🎁<b>מתנות</b></div><div class="tile" data-cat="shabbat" style="background:linear-gradient(160deg,#0b1220,#0369a1)">🕯️<b>שבת וחגים</b></div><div class="tile" data-cat="tickets" style="background:linear-gradient(160deg,#042f2e,#22c55e)">🎟️<b>כרטיסים</b></div><div class="tile" data-cat="sweets" style="background:linear-gradient(160deg,#082f49,#22d3ee)">🍬<b>ממתקים כשרים</b></div><div class="tile" data-cat="games" style="background:linear-gradient(160deg,#111827,#64748b)">🎮<b>משחקי וידאו לילדים</b></div><div class="tile" data-cat="books" style="background:linear-gradient(160deg,#052e16,#4ade80)">📚<b>ספרי ילדים</b></div><div class="tile" data-cat="edu" style="background:linear-gradient(160deg,#0c4a6e,#38bdf8)">🔬<b>צעצועים חינוכיים</b></div><div class="tile" data-cat="pets" style="background:linear-gradient(160deg,#134e4a,#2dd4bf)">🐾<b>ציוד לחיות מחמד</b></div><div class="tile" data-cat="garden" style="background:linear-gradient(160deg,#1e293b,#94a3b8)">🪴<b>צמחים וגינה</b></div><div class="tile" data-cat="jerseys" style="background:linear-gradient(160deg,#064e3b,#16a34a)">👕<b>חולצות קבוצות</b></div><div class="tile" data-cat="art" style="background:linear-gradient(160deg,#0f172a,#0ea5e9)">🎨<b>ציוד יצירה</b></div><div class="tile" data-cat="instr" style="background:linear-gradient(160deg,#0b1220,#0369a1)">🎹<b>כלי נגינה למתחילים</b></div><div class="tile" data-tools="1" style="background:linear-gradient(160deg,#042f2e,#22c55e)">🧰<b>כלים</b></div><div class="tile" id="wazeTile" onclick="wazeModal()" style="background:linear-gradient(160deg,#082f49,#22d3ee)">🚗<b>Waze</b></div><div class="tile" data-game="1" style="background:linear-gradient(160deg,#020617,#0c1e3d 42%,#0369a1 78%,#16a34a)">🎮⚡<b>משחק</b></div></div><div id="homeRecent"></div>
  <div id="iosHint" class="ioshint" hidden></div>
  <div class="chips" id="chips"></div>
 </section>
@@ -584,7 +588,7 @@ async function commonsImg(q){try{const d=await j(`https://commons.wikimedia.org/
 const IO=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){IO.unobserve(e.target);loadImg(e.target)}}),{rootMargin:'200px'}):null;
 function lazyImgs(){document.querySelectorAll('[data-imgq]').forEach(el=>{if(IO){IO.observe(el);return}loadImg(el)})}
 function loadImg(el){{const q=el.dataset.imgq;el.removeAttribute('data-imgq');commonsImg(q).then(u=>{if(u){const im=new Image();im.onload=()=>{el.style.backgroundImage=`url('${u}')`;el.textContent=''};im.src=u}})}}
-const GRADS=['#f472b6,#a78bfa','#06b6d4,#3b82f6','#f97316,#ef4444','#22c55e,#14b8a6','#eab308,#f97316','#8b5cf6,#ec4899','#0ea5e9,#22d3ee','#f43f5e,#fb923c'];
+const GRADS=['#0ea5e9,#0369a1','#22d3ee,#0f172a','#22c55e,#064e3b','#38bdf8,#1e293b','#14b8a6,#042f2e','#4ade80,#052e16','#67e8f9,#082f49','#94a3b8,#020617'];
 function typeCard(t,st,i,badge){const E=encodeURIComponent;const em=t[2]||EMO[i%EMO.length];
  const fv=LS.get('favs').some(f=>f.q===t[0]);return `<div class="card"${badge?'':` data-q="${esc(t[0])}"`}><button class="favh" data-fav="${esc(t[0])}" title="שמור למועדפים">${fv?'❤️':'🤍'}</button>${qtyHtml(t[0])}<div class="cacts"><button data-add="cart" data-n="${esc(t[0])}" title="הוסף לרשימת קניות">🛒</button><button data-add="wish" data-n="${esc(t[0])}" title="הוסף לרשימת משאלות">🎁</button><button data-add="cmp" data-n="${esc(t[0])}" title="השווה">⚖️</button></div>${badge?'<span class="badge">✨ הצעה</span>':''}<div class="im"  style="background:linear-gradient(135deg,${GRADS[i%GRADS.length]});background-size:cover;background-position:center">${em}</div><div class="t">${esc(t[0])}</div>${starsHtml(t[0])}<div class="s">${esc(t[3]||t[1])}</div><div style="display:flex;flex-wrap:wrap">${badge?`<a class="vbuy" target="_self" href="https://www.google.com/search?tbm=shop&q=${E(t[1])}">💰 ראה מחירים אמיתיים</a>`:''}${(ST[st]?ST[st](t):[]).map(b=>`<a class="vbuy" target="_self" href="${b[1]}">${b[0]}</a>`).join('')}</div>${st&&st!=='food'&&st!=='tix'?cheapHtml(t[0],t[1],1):''}</div>`}
 async function typesHtml(list,st='toy',name='🧸 כל הסוגים'){
