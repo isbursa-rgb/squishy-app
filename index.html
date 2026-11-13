@@ -5,6 +5,7 @@
 <title>Omni · חפש הכל</title>
 <script>try{if(localStorage.getItem('lang')==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr'}}catch(e){}</script>
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0369a1">
@@ -152,7 +153,8 @@ header{position:sticky;top:14px;z-index:20;margin:14px auto 0;width:min(1120px,c
 header::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.38) 48%,transparent 62%);background-size:220% 100%;animation:hdrshimmer 3.8s linear infinite;pointer-events:none}
 @keyframes hdrshimmer{to{background-position:-220% 0}}
 header>*{position:relative;z-index:1}
-.logo{background:none;-webkit-background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-weight:800;letter-spacing:.04em;text-shadow:0 0 16px rgba(34,211,238,.85);font-family:Orbitron,Rubik,sans-serif}
+.logo{display:flex;align-items:center;gap:8px;background:none;-webkit-background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-weight:800;letter-spacing:.04em;text-shadow:0 0 16px rgba(34,211,238,.85);font-family:Orbitron,Rubik,sans-serif}
+.logoimg{width:42px;height:42px;border-radius:12px;object-fit:cover;box-shadow:0 0 14px rgba(34,211,238,.9),0 0 4px #22d3ee}
 .hbtns{flex-wrap:wrap;justify-content:flex-end;flex:1;gap:8px}
 header .btn{background:rgba(15,23,42,.45);border:1px solid rgba(148,163,184,.45);color:#e8f7ff;font-weight:700;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
 header .btn:hover{background:rgba(14,165,233,.28);box-shadow:0 0 16px rgba(34,211,238,.55);transform:translateY(-2px)}
@@ -199,6 +201,7 @@ html[dir="ltr"] #qrFull .qfx{right:auto;left:14px}
  header{position:fixed;top:auto;bottom:10px;inset-inline:10px;width:auto;margin:0;border-radius:999px;padding:7px 8px;z-index:45;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 22px rgba(34,211,238,.35)}
  header::after{border-radius:999px}
  .logo{font-size:1rem;flex:none;padding-inline:6px}
+ .logoimg{width:28px;height:28px;border-radius:8px}
  .hbtns{flex:1;min-width:0;max-width:none;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
  .hbtns::-webkit-scrollbar{display:none}
  .hbtns .btn{flex:none;padding:8px 11px}
@@ -229,7 +232,7 @@ html[dir="ltr"] #qrFull .qfx{right:auto;left:14px}
 <noscript><div style="background:#f43f5e;color:#fff;padding:12px;text-align:center;font-weight:700">⚠️ JavaScript חסום בתצוגה הזו — החיפוש יעבור לוויקיפדיה. לחוויה המלאה פתח את הקובץ בדפדפן (Chrome/Edge).</div></noscript>
 <div class="blobs"><span></span><span></span><span></span></div>
 <header>
- <div class="logo" onclick="home()">✦ Omni</div>
+ <div class="logo" onclick="home()"><img class="logoimg" src="icon-192.png" alt="">Omni</div>
  <div class="hbtns">
   <button class="btn" onclick="discover()">🎲 גלה</button>
   <button class="btn" onclick="toggleDrawer()">❤️ מועדפים</button><button class="btn" onclick="openCart()">🛒 <span id="cartN">רשימה</span></button><button class="btn" onclick="openWish()">🎁 משאלות</button><button class="btn" onclick="openJar()">💰 קופה</button><button class="btn" id="toolsBtn" onclick="openTools()">🧰 כלים</button><button class="btn" id="shareBtn" onclick="shareApp()">📤 שתף</button><button class="btn" id="qrBtn" onclick="openQR()">📱 בר קוד</button>
